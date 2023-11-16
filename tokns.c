@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * array_of_tokns - this function returns the number of tokens in a string

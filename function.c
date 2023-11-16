@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * valid_int - check if the string is a valid integer
