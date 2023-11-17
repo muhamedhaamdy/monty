@@ -34,8 +34,8 @@ void push(stack_t **stack, unsigned int line_number)
 	UNSUSED(stack);
 	UNSUSED(line_number);
 	if (!valid_int(info.arr[1]))
-		fprintf(stderr, "usage: push integer");
-
+		fprintf(stderr, "L%d: usage: push integer", info.line_num);
+	info.line_num++;
 	num = atoi(info.arr[1]);
 	new_node = malloc(sizeof(stack_t));
 	if (!new_node)
@@ -60,6 +60,18 @@ void push(stack_t **stack, unsigned int line_number)
 
 }
 
+
+void pint(stack_t **stack, unsigned int line_number)
+{
+	UNSUSED(stack);
+	UNSUSED(line_number);
+	if (!info.head)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty", info.line_num);
+		exit(EXIT_FAILURE);
+	}
+	printf("%i\n", info.head->n);
+}
 
 /**
  * print_all - print all the elements of the stack
@@ -90,6 +102,7 @@ void exe_func(char **arr)
 	instruction_t inst[] = {
 		{"push", push},
 		{"pall", print_all},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 
