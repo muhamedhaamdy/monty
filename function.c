@@ -28,16 +28,24 @@ int valid_int(char *integer)
  */
 void push(stack_t **stack, unsigned int line_number)
 {
+	stack_t *new_node;
 	int num;
-	stack_t *new_node = malloc(sizeof(stack_t));
 
 	UNSUSED(stack);
+	UNSUSED(line_number);
 	if (!valid_int(info.arr[1]))
-		printf("L%d: usage: push integer\n", line_number);
+		fprintf(stderr, "usage: push integer");
+
 	num = atoi(info.arr[1]);
+	new_node = malloc(sizeof(stack_t));
+	if (!new_node)
+	{
+		fprintf(stderr, "Error: malloc failed");
+		exit(EXIT_FAILURE);
+	}
 	new_node->n = num;
-	new_node->prev = NULL;
 	new_node->next = NULL;
+	new_node->prev = NULL;
 	if (!info.head)
 	{
 		info.head = new_node;
@@ -49,6 +57,7 @@ void push(stack_t **stack, unsigned int line_number)
 		info.head->prev = new_node;
 		info.head = new_node;
 	}
+
 }
 
 
@@ -66,7 +75,7 @@ void print_all(stack_t **stack, unsigned int line_number)
 	UNSUSED(stack);
 	while (temp)
 	{
-		printf("%d\n", temp->n);
+		printf("%i\n", temp->n);
 		temp = temp->next;
 	}
 }
@@ -96,6 +105,5 @@ void exe_func(char **arr)
 	printf("L%d: unknown instruction %s", info.line_num, arr[0]);
 	exit(EXIT_FAILURE);
 }
-
 
 

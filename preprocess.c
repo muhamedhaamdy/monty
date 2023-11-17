@@ -36,6 +36,7 @@ void check_EOF(size_t n, char *command)
 	{
 		free(command);
 		fclose(info.file);
+		free_stack(info.head);
 		exit(0);
 	}
 }

@@ -23,6 +23,22 @@ void twoD_free(void)
 }
 
 /**
+ * free_stack - Frees the memory allocated for a stack
+ * @head: The head of the stack
+ */
+void free_stack(stack_t *head)
+{
+	stack_t *tmp;
+
+	while (head)
+	{
+		tmp = head;
+		head = head->next;
+		free(tmp);
+	}
+}
+
+/**
  * main - entry point
  * @ac: the number of arguments
  * @av: the arguments
