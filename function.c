@@ -109,6 +109,8 @@ void exe_func(char **arr)
 		{"nop", nop},
 		{"sub", sub},
 		{"div", _div},
+		{"mul", mul},
+		{"mod", mod},
 		{NULL, NULL}
 	};
 	info.line_num++;
