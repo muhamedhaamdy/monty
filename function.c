@@ -104,6 +104,7 @@ void exe_func(char **arr)
 		{"pall", print_all},
 		{"pint", pint},
 		{"pop", pop},
+		{"swap", swap},
 		{NULL, NULL}
 	};
 
