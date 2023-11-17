@@ -109,7 +109,7 @@ void exe_func(char **arr)
 		{"nop", nop},
 		{NULL, NULL}
 	};
-
+	info.line_num++;
 	while (inst[i].opcode)
 	{
 		if (!strcmp(inst[i].opcode, arr[0]))

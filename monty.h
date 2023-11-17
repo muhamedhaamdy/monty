@@ -7,7 +7,7 @@
 #include <sys/types.h>
 #define _POSIX_C_SOURCE 200809L
 #define UNSUSED(x) (void)(x)
-#define INIT_INF {NULL, NULL, NULL, NULL, 0}
+#define INIT_INF {NULL, NULL, NULL, NULL, 1}
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
