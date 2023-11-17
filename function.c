@@ -103,6 +103,7 @@ void exe_func(char **arr)
 		{"push", push},
 		{"pall", print_all},
 		{"pint", pint},
+		{"pop", pop},
 		{NULL, NULL}
 	};
 
