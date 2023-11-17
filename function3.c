@@ -2,12 +2,12 @@
 
 
 /**
- * div - divide the top two elements of the stack
+ * _div - divide the top two elements of the stack
  * 
  * @stack : the stack 
  * @line_number : the line number 
  */
-void div(stack_t **stack, unsigned int line_number)
+void _div(stack_t **stack, unsigned int line_number)
 {
     stack_t *tmp;
 
