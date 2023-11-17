@@ -77,3 +77,22 @@ void nop(stack_t **stack, unsigned int line_number)
     UNSUSED(stack);
     UNSUSED(line_number);
 }
+
+/**
+ * sub - subtract the top two elements of the stack
+ *
+ * @stack : the stack
+ * @line_number : the line number
+ */ 
+void sub(stack_t **stack, unsigned int line_number)
+{
+    UNSUSED(stack);
+    UNSUSED(line_number);
+    if (!info.head || !info.head->next)
+    {
+        fprintf(stderr, "L%d: can't sub, stack too short", info.line_num);
+        exit(EXIT_FAILURE);
+    }
+    info.head->next->n -= info.head->n;
+    pop(stack, line_number);
+}
